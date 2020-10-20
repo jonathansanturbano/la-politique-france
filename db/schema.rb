@@ -10,9 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_10_20_135231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "partis", force: :cascade do |t|
+    t.string "nom"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "personnalites", force: :cascade do |t|
+    t.string "nom"
+    t.text "resume"
+    t.text "propositions"
+    t.bigint "parti_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parti_id"], name: "index_personnalites_on_parti_id"
+  end
+
+  create_table "thematiques", force: :cascade do |t|
+    t.string "titre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "personnalites", "partis"
 end

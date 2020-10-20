@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div style="min-height: calc(100vh - 120px)">
+  <div style="text-align: center">
+    Que recherchez-vous ?
+  </div>
+  <div class="home-grid">
+    <%= link_to "Thématiques", thematiques_path, class: "custom-button" %>
+    <%= link_to "Partis Politiques", partis_path, class: "custom-button" %>
+  </div>
+</div>
