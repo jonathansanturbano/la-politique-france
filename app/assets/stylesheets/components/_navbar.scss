@@ -16,12 +16,24 @@
   background-color: $light-gray;
   // border-bottom: 0.2px black solid;
   margin-bottom: 20px;
+  position: relative;
+
+  #icon {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+
+    img {
+      height: 60px;
+    }
+  }
 }
 
 .pc-links {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-left: 100px;
 
   a {
     text-decoration: none;
