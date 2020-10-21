@@ -16,7 +16,9 @@
   background-color: $light-gray;
   // border-bottom: 0.2px black solid;
   margin-bottom: 20px;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   #icon {
     position: absolute;
@@ -42,7 +44,6 @@
     &:hover {
       font-weight: bold;
       text-decoration: underline;
-      font-style: italic;
     }
   }
 }

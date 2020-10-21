@@ -1,0 +1,43 @@
+.cards {
+  margin: 1rem 10vw;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.political-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  word-wrap: break-word;
+  background-color: #F9F9F9;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  padding: 12px 4px;
+}
+
+.card-information {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  h4 {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}

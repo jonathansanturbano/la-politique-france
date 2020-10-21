@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :personnalites, only: [:index, :show]
   resources :thematiques, only: [:index, :show]
   resources :partis, only: [:index, :show]

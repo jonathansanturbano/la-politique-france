@@ -1,2 +1,14 @@
 <% provide(:title, 'Thématiques') %>
 <h1>Thématiques</h1>
+<div class="cards">
+  <% @thematiques.each do |thematique| %>
+    <div class="political-card">
+      <div class="card-image">
+        <%= cl_image_tag thematique.photo.key, size: "200x200", crop: "pad", gravity: "center" %>
+      </div>
+      <div class="card-information">
+        <h4><%= thematique.titre %></h4>
+      </div>
+    </div>
+  <% end %>
+</div>

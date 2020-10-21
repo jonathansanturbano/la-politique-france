@@ -1,2 +1,15 @@
 <% provide(:title, 'Partis Politiques') %>
 <h1>Partis Politiques</h1>
+
+<div class="cards">
+  <% @partis.each do |parti| %>
+    <div class="political-card">
+      <div class="card-image">
+        <%= cl_image_tag parti.photo.key, size: "200x200", crop: "pad", gravity: "center" %>
+      </div>
+      <div class="card-information">
+        <h4><%= parti.nom %></h4>
+      </div>
+    </div>
+  <% end %>
+</div>
