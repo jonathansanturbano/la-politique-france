@@ -2,13 +2,13 @@
 <h1>Thématiques</h1>
 <div class="cards">
   <% @thematiques.each do |thematique| %>
-    <div class="political-card">
+    <%= link_to thematique_path(thematique), class: "political-card" do %>
       <div class="card-image">
-        <%= cl_image_tag thematique.photo.key, size: "200x200", crop: "pad", gravity: "center" %>
+        <%= cl_image_tag thematique.photo.key, class: "zoom", size: "180x180", crop: "pad", gravity: "center" %>
       </div>
       <div class="card-information">
-        <h4><%= thematique.titre %></h4>
+        <h5><%= thematique.titre %></h5>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

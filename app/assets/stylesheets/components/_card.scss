@@ -25,6 +25,11 @@
   width: 100%;
   border-radius: 4px;
   box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.2);
+  height: 282px;
+
+  &:hover {
+  text-decoration-color: rgb(1, 35, 150);
+  }
 }
 
 .card-image {
@@ -34,10 +39,29 @@
 .card-information {
   display: flex;
   justify-content: center;
-  height: 100%;
   align-items: center;
-  h4 {
-    text-decoration: underline;
+  position: absolute;
+  bottom: 0px;
+  height: 50px;
+  width: 100%;
+
+  h5 {
     font-weight: bold;
+    color: black;
+  }
+}
+
+.zoom {
+  height: 180px;
+  width: 180px;
+  transition-property: height, width;
+  transition-duration: 0.3s;
+}
+
+.political-card:hover {
+  box-shadow: 3px 5px 8px rgba(1, 35, 150, 0.3);
+  .zoom {
+    height: 190px;
+    width: 190px;
   }
 }

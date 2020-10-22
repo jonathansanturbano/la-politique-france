@@ -1,0 +1,24 @@
+.parti-nom {
+  display: flex;
+  justify-content: center;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.line-space {
+  margin: 2rem auto;
+  width: 135px;
+  border-top: 1px dotted;
+}
+
+@media (min-width: 768px) {
+  .parti-nom {
+    white-space: nowrap;
+  }
+}
+
+.parti-description {
+  text-align: justify;
+}

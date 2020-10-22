@@ -1,2 +1,10 @@
-<% provide(:title, 'TODO') %>
-<h1>Parti Politique</h1>
+<% provide(:title, @parti.nom) %>
+<%= cl_image_tag @parti.photo.key, width: "290" %>
+<div class="line-space"></div>
+<div class="parti-nom">
+  <h2><%= @parti.nom %></h2>
+</div>
+<div class="line-space"></div>
+<p class="parti-description">
+  <%= @parti.description %>
+</p>

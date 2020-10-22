@@ -33,4 +33,9 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initModalOnClick();
+  // document.querySelectorAll(".political-card").forEach((card) => {
+  //   card.addEventListener("mouseenter", (event) => {
+  //     console.log(event.currentTarget);
+  //   });
+  // });
 });
