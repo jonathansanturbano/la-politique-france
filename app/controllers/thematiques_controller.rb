@@ -5,5 +5,6 @@ class ThematiquesController < ApplicationController
 
   def show
     @thematique = Thematique.find(params[:id])
+    @sous_thematiques = @thematique.sous_thematiques
   end
 end

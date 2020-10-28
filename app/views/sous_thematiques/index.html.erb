@@ -1,9 +1,8 @@
-<% provide(:title, @thematique.titre) %>
-<h1><%= @thematique.titre %></h1>
-
+<% provide(:title, 'Sous-thématiques') %>
+<h1>Sous-thématiques</h1>
 <div class="cards">
-  <% @sous_thematiques.each do |sous_thematique| %>
-    <%= link_to thematique_sous_thematique_path(sous_thematique), class: "political-card" do %>
+  <% @sous_thematiques.each do |thematique| %>
+    <%= link_to sous_thematique_path(thematique), class: "political-card" do %>
       <div class="card-image">
         <%= cl_image_tag sous_thematique.photo.key, class: "zoom", size: "180x180", crop: "pad", gravity: "center" %>
       </div>
@@ -13,3 +12,4 @@
     <% end %>
   <% end %>
 </div>
+
