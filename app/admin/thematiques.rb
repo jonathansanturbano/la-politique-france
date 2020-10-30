@@ -1,10 +1,7 @@
 ActiveAdmin.register Thematique do
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
+  config.filters = false
+
   permit_params :titre,
                 :photo,
                 sous_thematiques_attributes: [:id, :titre, :photo]
@@ -22,10 +19,6 @@ ActiveAdmin.register Thematique do
     column :titre
     actions
   end
-
-  filter :titre
-
-  # EXAMPLE
 
   form do |f|
     f.inputs 'Details' do

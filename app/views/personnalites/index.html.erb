@@ -1,2 +1,23 @@
 <% provide(:title, 'Personnalités Politiques') %>
 <h1>Personnalités Politiques</h1>
+
+
+<%= form_tag("/personnalites", method: "get") do %>
+  <%= select_tag :search, options_from_collection_for_select(@partis, :id, :nom), class: 'select2' %>
+  <%= submit_tag("Search", class: "custom-button") %>
+<% end %>
+
+<% if !params[:search].nil? %>
+  <div class="cards">
+    <% @personnalites.each do |personnalite| %>
+      <%= link_to personnalite_path(personnalite), class: "political-card" do %>
+          <div class="card-image">
+            <%= cl_image_tag personnalite.parti.photo.key, class: "zoom", size: "200x200", crop: "pad", gravity: "center" %>
+          </div>
+          <div class="card-information">
+            <h5><%= personnalite.nom %></h5>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

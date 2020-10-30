@@ -3,13 +3,17 @@
 
 <div class="cards">
   <% @partis.each do |parti| %>
-    <%= link_to parti_path(parti), class: "political-card" do %>
-        <div class="card-image">
-          <%= cl_image_tag parti.photo.key, class: "zoom", size: "200x200", crop: "pad", gravity: "center" %>
-        </div>
-        <div class="card-information">
-          <h5><%= parti.nom %></h5>
-        </div>
+    <% unless parti.nom == "Indépendant" %>
+      <%= link_to parti_path(parti), class: "political-card" do %>
+          <div class="card-image">
+            <% if parti.photo.attached? %>
+              <%= cl_image_tag parti.photo.key, class: "zoom", size: "200x200", crop: "pad", gravity: "center" %>
+            <% end %>
+          </div>
+          <div class="card-information">
+            <h5><%= parti.nom %></h5>
+          </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

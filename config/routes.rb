@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'sous_thematiques/index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  get "personnalites/search", to: 'personnalites#search'
   resources :personnalites, only: [:index, :show]
   resources :thematiques, only: [:index, :show] do
     resources :sous_thematiques, only: [:index, :show]

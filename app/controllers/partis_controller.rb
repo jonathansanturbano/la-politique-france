@@ -1,6 +1,6 @@
 class PartisController < ApplicationController
   def index
-    @partis = Parti.all
+    @partis = Parti.order(:nom)
   end
 
   def show

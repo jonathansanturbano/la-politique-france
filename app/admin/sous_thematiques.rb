@@ -20,7 +20,7 @@ ActiveAdmin.register SousThematique do
     column "Thématique" do |t|
       t.thematique.titre
     end
-    column :titre
+    column "Sous-Thématique", :titre
     actions
   end
 

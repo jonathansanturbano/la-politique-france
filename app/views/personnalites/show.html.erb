@@ -1,2 +1,10 @@
-<% provide(:title, 'TODO') %>
-<h1>Personnalité Politique</h1>
+<% provide(:title, @personnalite.nom) %>
+<h1><%= @personnalite.nom %></h1>
+<div class="line-space"></div>
+<p class="personnalite-resume">
+  <%= @personnalite.resume %>
+</p>
+<div class="line-space"></div>
+<p class="personnalite-description">
+  <%= @personnalite.propositions %>
+</p>

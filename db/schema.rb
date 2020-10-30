@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_27_101823) do
+ActiveRecord::Schema.define(version: 2020_10_30_140307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 2020_10_27_101823) do
     t.bigint "parti_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "poste"
+    t.string "lien"
     t.index ["parti_id"], name: "index_personnalites_on_parti_id"
   end
 
