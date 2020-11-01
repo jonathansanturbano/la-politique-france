@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_30_140307) do
+ActiveRecord::Schema.define(version: 2020_10_30_150351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,30 @@ ActiveRecord::Schema.define(version: 2020_10_30_140307) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "avis_sous_thematiques", force: :cascade do |t|
+    t.bigint "parti_id", null: false
+    t.bigint "sous_thematique_id", null: false
+    t.text "opinion_majoritaire"
+    t.text "divergences"
+    t.string "liens"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parti_id"], name: "index_avis_sous_thematiques_on_parti_id"
+    t.index ["sous_thematique_id"], name: "index_avis_sous_thematiques_on_sous_thematique_id"
+  end
+
+  create_table "avis_thematiques", force: :cascade do |t|
+    t.bigint "parti_id", null: false
+    t.bigint "thematique_id", null: false
+    t.text "opinion_majoritaire"
+    t.text "divergences"
+    t.string "liens"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parti_id"], name: "index_avis_thematiques_on_parti_id"
+    t.index ["thematique_id"], name: "index_avis_thematiques_on_thematique_id"
+  end
+
   create_table "partis", force: :cascade do |t|
     t.string "nom"
     t.text "description"
@@ -96,6 +120,10 @@ ActiveRecord::Schema.define(version: 2020_10_30_140307) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "avis_sous_thematiques", "partis"
+  add_foreign_key "avis_sous_thematiques", "sous_thematiques"
+  add_foreign_key "avis_thematiques", "partis"
+  add_foreign_key "avis_thematiques", "thematiques"
   add_foreign_key "personnalites", "partis"
   add_foreign_key "sous_thematiques", "thematiques"
 end

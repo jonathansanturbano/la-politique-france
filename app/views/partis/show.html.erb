@@ -1,6 +1,8 @@
 <% provide(:title, @parti.nom) %>
 
-<%= cl_image_tag @parti.photo.key, width: "290" %>
+<% if @parti.photo.attached? %>
+  <%= cl_image_tag @parti.photo.key, width: "290" %>
+<% end %>
 
 <div class="line-space"></div>
 <div class="parti-nom">
@@ -10,3 +12,16 @@
 <p class="parti-description">
   <%= @parti.description %>
 </p>
+
+<div class="cards">
+  <% @avis_thematiques.each do |avis_thematique| %>
+    <%= link_to avis_thematique_path(avis_thematique), class: "political-card" do %>
+        <div class="card-image">
+          <%= cl_image_tag avis_thematique.thematique.photo.key, class: "zoom", size: "200x200", crop: "pad", gravity: "center" %>
+        </div>
+        <div class="card-information">
+          <h5><%= avis_thematique.thematique.titre %></h5>
+        </div>
+    <% end %>
+  <% end %>
+</div>

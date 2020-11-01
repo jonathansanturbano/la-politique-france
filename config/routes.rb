@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
+  get 'avis_thematiques/show'
   get 'sous_thematiques/index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "personnalites/search", to: 'personnalites#search'
   resources :personnalites, only: [:index, :show]
+  resources :partis, only: [:index, :show]
   resources :thematiques, only: [:index, :show] do
     resources :sous_thematiques, only: [:index, :show]
   end
-  resources :partis, only: [:index, :show]
+  resources :avis_thematiques, only: [:show]
   root to: 'pages#home'
   get '/qui-sommes-nous', to: 'pages#about'
   get '/pour-aller-plus-loin', to: 'pages#info'
