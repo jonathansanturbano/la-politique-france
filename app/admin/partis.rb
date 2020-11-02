@@ -1,20 +1,7 @@
 ActiveAdmin.register Parti do
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
   permit_params :nom, :description, :photo,
                 avis_thematiques_attributes: [:id, :opinion_majoritaire, :divergences, :liens, :thematique_id]
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:nom, :description]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
 
   index do
     selectable_column

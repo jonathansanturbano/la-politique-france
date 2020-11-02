@@ -6,7 +6,11 @@
   margin: 2rem auto;
 }
 
-.home-spacer {
+.custom-wrapper {
+  min-height: calc(100vh - 120px)
+}
+
+.content-spacer {
   height: calc(100vh - 150px);
   display: flex;
   flex-direction: column;

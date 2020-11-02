@@ -1,2 +1,17 @@
-<h1>AvisThematiques#show</h1>
-<p>Find me in app/views/avis_thematiques/show.html.erb</p>
+<% provide(:title, @avis_thematique.thematique.titre) %>
+<div class="custom-wrapper avis_thematique">
+
+  <div>
+    <%= cl_image_tag @avis_thematique.thematique.photo.key, size: "180x180", crop: "pad", gravity: "center" %>
+    <h1><%= @avis_thematique.thematique.titre %></h1>
+  </div>
+
+  <p><%= @avis_thematique.opinion_majoritaire %></p>
+
+  <p><%= @avis_thematique.divergences %></p>
+
+  <% @avis_thematique.liens.each do |lien| %>
+    <p><%= lien %></p>
+  <% end %>
+
+</div>
