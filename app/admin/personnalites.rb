@@ -28,7 +28,7 @@ ActiveAdmin.register Personnalite do
     actions
   end
 
-  filter :parti_id, as: :select, collection: Parti.all.map { |u| [u.nom, u.id] }, include_blank: false
+  # filter :parti_id, as: :select, collection: Parti.all.map { |u| [u.nom, u.id] }, include_blank: false
   filter :nom
   filter :propositions
 
