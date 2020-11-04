@@ -24,7 +24,7 @@ ActiveAdmin.register SousThematique do
     actions
   end
 
-  # filter :thematique_id, as: :select, collection: Thematique.all.map { |u| [u.titre, u.id] }, include_blank: false
+  filter :thematique_id, as: :select, collection: Thematique.all.map { |u| [u.titre, u.id] }, include_blank: false
 
   form do |f|
     f.inputs "Détails" do
