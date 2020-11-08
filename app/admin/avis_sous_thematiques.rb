@@ -5,14 +5,14 @@ ActiveAdmin.register AvisSousThematique do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :parti_id, :sous_thematique_id, :opinion_majoritaire, :divergences, :liens
+  # permit_params :parti_id, :sous_thematique_id, :liens, :divergences, :opinion_majoritaire
   #
   # or
   #
   # permit_params do
-  #   permitted = [:parti_id, :sous_thematique_id, :opinion_majoritaire, :divergences, :liens]
+  #   permitted = [:parti_id, :sous_thematique_id, :liens, :divergences, :opinion_majoritaire]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end
