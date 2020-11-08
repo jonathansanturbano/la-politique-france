@@ -6,12 +6,18 @@
     <h1><%= @avis_thematique.thematique.titre %></h1>
   </div>
 
-  <p><%= @avis_thematique.opinion_majoritaire %></p>
+  <% if !@avis_thematique.opinion_majoritaire.blank? %>
+    <p><%= @avis_thematique.opinion_majoritaire %></p>
+  <% else %>
+    <p>Pas de remarques à ce sujet.</p>
+  <% end %>
 
   <p><%= @avis_thematique.divergences %></p>
 
-  <% @avis_thematique.liens.each do |lien| %>
-    <p><%= lien %></p>
+  <% unless @avis_thematique.liens.nil? %>
+    <% @avis_thematique.liens.each do |lien| %>
+      <p><%= lien %></p>
+    <% end %>
   <% end %>
 
 </div>

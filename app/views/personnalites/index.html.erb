@@ -7,7 +7,7 @@
   <%= submit_tag("Search", class: "custom-button") %>
 <% end %>
 
-<% if !params[:search].nil? %>
+<%# if !params[:search].nil? %>
   <div class="cards">
     <% @personnalites.each do |personnalite| %>
       <%= link_to personnalite_path(personnalite), class: "political-card" do %>
@@ -20,4 +20,4 @@
       <% end %>
     <% end %>
   </div>
-<% end %>
+<%# end %>

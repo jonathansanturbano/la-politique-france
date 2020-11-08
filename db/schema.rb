@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_30_150351) do
+ActiveRecord::Schema.define(version: 2020_11_07_135538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,11 +65,10 @@ ActiveRecord::Schema.define(version: 2020_10_30_150351) do
   create_table "avis_sous_thematiques", force: :cascade do |t|
     t.bigint "parti_id", null: false
     t.bigint "sous_thematique_id", null: false
-    t.text "opinion_majoritaire"
-    t.text "divergences"
     t.string "liens"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "avis"
     t.index ["parti_id"], name: "index_avis_sous_thematiques_on_parti_id"
     t.index ["sous_thematique_id"], name: "index_avis_sous_thematiques_on_sous_thematique_id"
   end

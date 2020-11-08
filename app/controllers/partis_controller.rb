@@ -5,6 +5,6 @@ class PartisController < ApplicationController
 
   def show
     @parti = Parti.find(params[:id])
-    @avis_thematiques = AvisThematique.where(parti_id: @parti)
+    @avis_thematiques = AvisThematique.where("parti_id = ?", @parti.id)
   end
 end

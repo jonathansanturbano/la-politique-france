@@ -5,7 +5,9 @@
   <% @sous_thematiques.each do |sous_thematique| %>
     <%= link_to thematique_sous_thematique_path(sous_thematique), class: "political-card" do %>
       <div class="card-image">
-        <%= cl_image_tag sous_thematique.photo.key, class: "zoom", size: "180x180", crop: "pad", gravity: "center" %>
+        <% if sous_thematique.photo.attached? %>
+          <%= cl_image_tag sous_thematique.photo.key, class: "zoom", size: "180x180", crop: "pad", gravity: "center" %>
+        <% end %>
       </div>
       <div class="card-information">
         <h5><%= sous_thematique.titre %></h5>

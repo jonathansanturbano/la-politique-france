@@ -2,6 +2,7 @@ class PersonnalitesController < ApplicationController
   def index
     @personnalites = Personnalite.all
     @partis = Parti.order(:nom)
+
     return if params[:search].nil?
 
     parti = Parti.find(params[:search])
