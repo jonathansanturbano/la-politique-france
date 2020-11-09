@@ -28,8 +28,9 @@ ActiveAdmin.register Parti do
         f.inputs do
           f.has_many :avis_thematiques, allow_destroy: true,
                                         heading: nil,
-                                        new_record: true do |a|
-            a.input :thematique_id, as: :select, collection: Thematique.all.map { |u| [u.titre, u.id] }, include_blank: false
+                                        new_record: false do |a|
+            a.input :thematique_id,
+                    as: :select, collection: Thematique.all.map { |u| [u.titre, u.id] }, include_blank: false
             a.input :opinion_majoritaire
             a.input :divergences
             a.input :liens
@@ -38,10 +39,10 @@ ActiveAdmin.register Parti do
       end
       tab 'Avis Sous-Thématiques' do
         f.inputs do
-          f.has_many :avis_sous_thematiques, allow_destroy: true,
-                                        heading: nil,
-                                        new_record: true do |a|
-            a.input :sous_thematique_id, as: :select, collection: SousThematique.all.map { |u| [u.titre, u.id] }, include_blank: false
+          f.has_many :avis_sous_thematiques, heading: nil,
+                                             new_record: false do |a|
+            a.input :sous_thematique_id,
+                    as: :select, collection: SousThematique.all.map { |u| ["#{u.thematique.titre.upcase} - #{u.titre}", u.id] }, include_blank: false, label: false
             a.input :avis
           end
         end

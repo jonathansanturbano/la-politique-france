@@ -2,7 +2,9 @@
 <div class="custom-wrapper avis_thematique">
 
   <div>
-    <%= cl_image_tag @avis_thematique.thematique.photo.key, size: "180x180", crop: "pad", gravity: "center" %>
+    <% if @avis_thematique.thematique.photo.attached? %>
+      <%= cl_image_tag @avis_thematique.thematique.photo.key, size: "180x180", crop: "pad", gravity: "center" %>
+    <% end %>
     <h1><%= @avis_thematique.thematique.titre %></h1>
   </div>
 

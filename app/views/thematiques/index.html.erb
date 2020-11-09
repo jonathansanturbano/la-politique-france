@@ -4,7 +4,9 @@
   <% @thematiques.each do |thematique| %>
     <%= link_to thematique_path(thematique), class: "political-card" do %>
       <div class="card-image">
-        <%= cl_image_tag thematique.photo.key, class: "zoom", size: "180x180", crop: "pad", gravity: "center" %>
+        <% if thematique.photo.attached? %>
+          <%= cl_image_tag thematique.photo.key, class: "zoom", size: "180x180", crop: "pad", gravity: "center" %>
+        <% end %>
       </div>
       <div class="card-information">
         <h5><%= thematique.titre %></h5>

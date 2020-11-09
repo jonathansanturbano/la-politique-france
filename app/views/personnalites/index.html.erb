@@ -2,9 +2,13 @@
 <h1>Personnalités Politiques</h1>
 
 
-<%= form_tag("/personnalites", method: "get") do %>
-  <%= select_tag :search, options_from_collection_for_select(@partis, :id, :nom), class: 'select2' %>
-  <%= submit_tag("Search", class: "custom-button") %>
+<%= form_tag("/personnalites", method: "get", class: "search-form") do %>
+  <div>
+    <%= select_tag :search, options_from_collection_for_select(@partis, :id, :nom), class: 'select2' %>
+  </div>
+  <div>
+    <%= submit_tag("Search", class: "custom-search-button") %>
+  </div>
 <% end %>
 
 <%# if !params[:search].nil? %>

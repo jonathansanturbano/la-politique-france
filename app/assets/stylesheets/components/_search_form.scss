@@ -1,0 +1,24 @@
+.search-form {
+  margin: 1rem 10vw;
+  align-items: stretch;
+
+  .select2-container {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .search-form {
+    display: flex;
+  }
+
+  .search-form > div:first-child {
+    flex-grow: 4;
+    margin-right: 0.5rem;
+  }
+
+  .search-form > div:last-child {
+    flex-grow: 1;
+  }
+}

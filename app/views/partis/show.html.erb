@@ -17,7 +17,9 @@
   <% @avis_thematiques.each do |avis_thematique| %>
     <%= link_to avis_thematique_path(avis_thematique), class: "political-card" do %>
         <div class="card-image">
-          <%= cl_image_tag avis_thematique.thematique.photo.key, class: "zoom", size: "200x200", crop: "pad", gravity: "center" %>
+          <% if avis_thematique.thematique.photo.attached? %>
+            <%= cl_image_tag avis_thematique.thematique.photo.key, class: "zoom", size: "200x200", crop: "pad", gravity: "center" %>
+          <% end %>
         </div>
         <div class="card-information">
           <h5><%= avis_thematique.thematique.titre %></h5>
