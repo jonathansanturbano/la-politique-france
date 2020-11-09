@@ -232,7 +232,7 @@ ActiveAdmin.setup do |config|
   #
     config.namespace :admin do |admin|
       admin.build_menu :utility_navigation do |menu|
-        menu.add label: "Retour au Site", url: "http://localhost:3000", html_options: { target: :blank }
+        menu.add label: "Retour au Site", url: "https://politique-france.herokuapp.com/", html_options: { target: :blank }
         admin.add_logout_button_to_menu menu
       end
     end
