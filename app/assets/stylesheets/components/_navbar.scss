@@ -13,12 +13,13 @@
 
 .navbar {
   height: 100px;
-  background-color: $light-gray;
+  background-color: rgb(154, 167, 188);
   // border-bottom: 0.2px black solid;
   margin-bottom: 20px;
   position: sticky;
   top: 0;
   z-index: 1;
+  box-shadow: 1px 3px 1px lightgray;
 
   #icon {
     position: absolute;
@@ -35,11 +36,11 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-left: 100px;
+  // margin-left: 100px;
 
   a {
     text-decoration: none;
-    color: black;
+    color: $ourblue;
 
     &:hover {
       font-weight: bold;

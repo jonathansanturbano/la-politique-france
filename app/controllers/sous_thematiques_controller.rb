@@ -12,5 +12,7 @@ class SousThematiquesController < ApplicationController
     return if params[:search].nil?
 
     @avis_sous_thematiques = @avis_sous_thematiques.where(parti_id: params[:search])
+
+    #ORDER AVIS BY PARTI NAME
   end
 end
