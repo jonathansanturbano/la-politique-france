@@ -4,7 +4,7 @@
 
 <%= form_tag("/thematiques/#{@sous_thematique.thematique.id}/sous_thematiques/#{@sous_thematique.id}", method: "get", class: "search-form") do %>
   <div>
-    <%= select_tag :search, options_from_collection_for_select(@partis, :id, :nom), multiple: true, value: params[:search], class: 'select2 multi' %>
+    <%= select_tag :search, options_from_collection_for_select(@partis, :id, :nom, params[:search]), multiple: true, value: params[:search], class: 'select2 multi' %>
   </div>
   <div>
     <%= submit_tag("Search", class: "custom-search-button") %>
@@ -18,6 +18,8 @@
         <div class="card-image-political">
           <% if avis_sous_thematique.parti.photo.attached? %>
             <%= cl_image_tag avis_sous_thematique.parti.photo.key, class: "zoom", size: "200x200", crop: "pad", gravity: "center" %>
+          <% else %>
+            <%= avis_sous_thematique.parti.nom %>
           <% end %>
         </div>
         <div class="card-information-horizontal">

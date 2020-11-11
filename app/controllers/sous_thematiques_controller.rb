@@ -13,6 +13,5 @@ class SousThematiquesController < ApplicationController
 
     @avis_sous_thematiques = @avis_sous_thematiques.where(parti_id: params[:search])
 
-    #ORDER AVIS BY PARTI NAME
   end
 end

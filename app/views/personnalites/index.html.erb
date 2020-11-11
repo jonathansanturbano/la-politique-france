@@ -4,7 +4,7 @@
 
 <%= form_tag("/personnalites", method: "get", class: "search-form") do %>
   <div>
-    <%= select_tag :search, options_from_collection_for_select(@partis, :id, :nom), class: 'select2' %>
+    <%= select_tag :search, options_from_collection_for_select(@partis, :id, :nom, params[:search]), class: 'select2' %>
   </div>
   <div>
     <%= submit_tag("Search", class: "custom-search-button") %>

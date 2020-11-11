@@ -18,18 +18,16 @@
   flex-direction: column;
   justify-self: center;
   word-wrap: break-word;
-  background-color: #F9F9F9;
+  background-color: white;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 2px;
   width: 100%;
   border-radius: 4px;
-  box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.1);
   height: 282px;
-
-  &:hover {
-  text-decoration-color: rgb(1, 35, 150);
-  }
+  transition-property: box-shadow;
+  transition-duration: 1s;
 }
 
 .card-image {

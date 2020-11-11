@@ -6,6 +6,7 @@ ActiveAdmin.register Parti do
 
   index do
     selectable_column
+    column :id
     column :nom
     column :description
     column :created_at
