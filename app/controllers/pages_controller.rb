@@ -7,4 +7,8 @@ class PagesController < ApplicationController
 
   def info
   end
+
+  def search
+    @results = Parti.search(params[:query], fields: ["nom"])
+  end
 end

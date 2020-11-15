@@ -11,4 +11,5 @@ class Thematique < ApplicationRecord
       AvisThematique.create(parti_id: parti.id, thematique_id: thematique.id)
     end
   end
+  searchkick
 end

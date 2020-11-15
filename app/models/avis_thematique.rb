@@ -3,4 +3,5 @@ class AvisThematique < ApplicationRecord
   belongs_to :thematique
   attribute :liens, :string, array: true
   validates :thematique, uniqueness: { scope: :parti }
+  searchkick
 end

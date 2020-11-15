@@ -11,4 +11,5 @@ class SousThematique < ApplicationRecord
       AvisSousThematique.create(parti_id: parti.id, sous_thematique_id: sous_thematique.id)
     end
   end
+  searchkick
 end
