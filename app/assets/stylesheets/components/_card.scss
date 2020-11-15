@@ -36,6 +36,7 @@
 
 .card-information {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -45,6 +46,14 @@
 
   h5 {
     font-weight: bold;
+    color: rgb(15, 46, 61);
+    span {
+      font-size: 12px;
+    }
+  }
+
+  p {
+    font-style: italic;
     color: rgb(15, 46, 61);
   }
 }
