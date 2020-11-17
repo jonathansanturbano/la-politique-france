@@ -3,6 +3,7 @@ class SousThematique < ApplicationRecord
   has_many :avis_sous_thematiques, dependent: :destroy
   has_one_attached :photo
   after_create :add_sous_thematique_avis
+  # searchkick
 
   def add_sous_thematique_avis
     partis = Parti.all
@@ -11,5 +12,4 @@ class SousThematique < ApplicationRecord
       AvisSousThematique.create(parti_id: parti.id, sous_thematique_id: sous_thematique.id)
     end
   end
-  searchkick
 end
