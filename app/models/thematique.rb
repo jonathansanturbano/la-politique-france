@@ -3,7 +3,12 @@ class Thematique < ApplicationRecord
   accepts_nested_attributes_for :sous_thematiques
   has_one_attached :photo
   after_create :add_thematique_avis
-  # searchkick
+
+  include AlgoliaSearch
+
+  algoliasearch do
+    attributes :titre
+  end
 
   def add_thematique_avis
     partis = Parti.all

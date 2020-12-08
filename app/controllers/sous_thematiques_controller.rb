@@ -1,7 +1,7 @@
 class SousThematiquesController < ApplicationController
   def index
     @sous_thematiques = SousThematique.all
-    @partis = Parti.all
+    @partis = Parti.order(:nom)
   end
 
   def show

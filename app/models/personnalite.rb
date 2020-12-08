@@ -1,4 +1,9 @@
 class Personnalite < ApplicationRecord
   belongs_to :parti
-  # searchkick
+
+  include AlgoliaSearch
+
+  algoliasearch do
+    attributes :nom
+  end
 end

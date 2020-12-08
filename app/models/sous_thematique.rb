@@ -3,7 +3,12 @@ class SousThematique < ApplicationRecord
   has_many :avis_sous_thematiques, dependent: :destroy
   has_one_attached :photo
   after_create :add_sous_thematique_avis
-  # searchkick
+
+  include AlgoliaSearch
+
+  algoliasearch do
+    attributes :titre
+  end
 
   def add_sous_thematique_avis
     partis = Parti.all
