@@ -12,3 +12,30 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  background-color: white;
+  color: $ourblue;
+}
+
+a {
+  color: $ourblue;
+
+  &:hover {
+    color: $ourblue;
+  }
+}
+
+h1 {
+  font-family: 'Fira Sans';
+}
+
+.container {
+  background-color: rgba(239, 245, 255, 0.4);
+  border: 0.1px dotted rgb(230, 230, 230);
+  box-shadow: 7px 6px 9px rgba(200, 200, 200, 0.6);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 2rem auto;
+}

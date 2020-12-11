@@ -19,7 +19,8 @@
             <%= cl_image_tag personnalite.parti.photo.key, class: "zoom", size: "200x200", crop: "pad", gravity: "center" %>
           </div>
           <div class="card-information">
-            <h5><%= personnalite.nom %><span> (<%= personnalite.lien %>)</span></h5>
+            <h5><%= personnalite.nom %></h5>
+            <h6>(<%= personnalite.lien %>)</h6>
             <p><%= personnalite.poste %></p>
           </div>
       <% end %>

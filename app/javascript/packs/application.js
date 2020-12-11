@@ -28,11 +28,13 @@ import "bootstrap";
 import { initModalOnClick } from '../components/modal';
 import { initSelect2 } from '../components/init_select2';
 import { initAlgolia } from '../components/init_algolia_search';
+import { logoAppear } from '../vanilla/logo_appear';
 
 document.addEventListener('turbolinks:load', () => {
   initSelect2();
   initModalOnClick();
   initAlgolia();
+  logoAppear();
   // document.querySelectorAll(".political-card").forEach((card) => {
   //   card.addEventListener("mouseenter", (event) => {
   //     console.log(event.currentTarget);

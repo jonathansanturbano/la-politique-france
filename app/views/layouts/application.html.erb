@@ -11,8 +11,12 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <div class="container text-center">
+    <% unless action_name == "home" %>
+      <div class="container text-center">
+    <% end %>
       <%= yield %>
+    <% unless action_name == "home" %>
     </div>
+    <% end %>
   </body>
 </html>

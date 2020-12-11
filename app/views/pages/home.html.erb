@@ -1,12 +1,16 @@
 <div class="custom-wrapper">
-  <%= form_tag recherche_path, method: :get do %>
-    <%= text_field_tag :query,
-        params[:query],
-        style: "width: 250px; text-align: center",
-        placeholder: "Que recherchez-vous ?" %>
-        <!-- Create a dropdown either the search is PERSON / THEMATIQUES + SOUS-T / PARTI FOR BETTER DB HITUP -->
-  <% end %>
   <div class="content-wrapper">
+    <div>
+      <%= image_tag "logo", class: "logo-home" %>
+    </div>
+    <div>
+      <%= form_tag recherche_path, method: :get do %>
+        <%= text_field_tag :query,
+            params[:query],
+            placeholder: "Que recherchez-vous ?", class: "home-search" %>
+            <!-- Create a dropdown either the search is PERSON / THEMATIQUES + SOUS-T / PARTI FOR BETTER DB HITUP -->
+      <% end %>
+    </div>
     <div class="home-grid">
       <%= link_to "Partis Politiques", partis_path, class: "custom-button" %>
       <%= link_to "Thématiques", thematiques_path, class: "custom-button" %>
