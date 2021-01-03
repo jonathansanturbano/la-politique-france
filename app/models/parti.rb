@@ -8,6 +8,8 @@ class Parti < ApplicationRecord
   accepts_nested_attributes_for :avis_sous_thematiques, allow_destroy: true
   after_create :create_blank_avis_thematiques, :create_blank_avis_sous_thematiques
   after_update :create_blank_avis_thematiques, :create_blank_avis_sous_thematiques
+  has_rich_text :rich_description
+
   include AlgoliaSearch
 
   algoliasearch do

@@ -8,8 +8,8 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
-@import "active_admin/mixins";
-@import "active_admin/base";
+@import "~@activeadmin/activeadmin/src/scss/mixins";
+@import "~@activeadmin/activeadmin/src/scss/base";
 @import "trix/dist/trix";
 // @import 'activeadmin/quill_editor_input';
 // @import 'activeadmin/quill_editor/quill.snow';
@@ -19,13 +19,15 @@
 //
 //   .status_tag { background: #6090DB; }
 
-trix-editor {
-  background: #fff;
-  max-height: 300px;
-  overflow-y: scroll;
-}
+body.active_admin {
+  trix-editor {
+    background: #fff;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
 
-.trix-editor-label {
-  float: none;
-  margin-bottom: 10px;
+  .trix-editor-label {
+    float: none;
+    margin-bottom: 10px;
+  }
 }

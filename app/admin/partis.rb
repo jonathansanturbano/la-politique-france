@@ -1,8 +1,8 @@
 ActiveAdmin.register Parti do
 
-  permit_params :nom, :description, :photo,
-                avis_thematiques_attributes: [:id, :opinion_majoritaire, :divergences, :liens, :thematique_id],
-                avis_sous_thematiques_attributes: [:id, :sous_thematique_id, :avis]
+  permit_params :nom, :rich_description, :photo,
+                avis_thematiques_attributes: [:id, :opinion_majoritaire, :divergences, :liens, :thematique_id, :_destroy],
+                avis_sous_thematiques_attributes: [:id, :sous_thematique_id, :avis, :_destroy]
 
   index do
     selectable_column
@@ -20,7 +20,10 @@ ActiveAdmin.register Parti do
 
     f.inputs 'Details' do
       f.input :nom
-      f.input :description
+      li do
+        label :rich_description, class: 'trix-editor-label'
+        f.rich_text_area :rich_description
+      end
       f.input :photo, as: :file, label: "Logo"
     end
 

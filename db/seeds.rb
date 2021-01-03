@@ -8,6 +8,7 @@ SousThematique.destroy_all
 Thematique.destroy_all
 Personnalite.destroy_all
 Parti.destroy_all
+AdminUser.destroy_all
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
@@ -74,10 +75,10 @@ logo = URI.open("https://previews.123rf.com/images/putracetol/putracetol1706/put
 sous_thematique.photo.attach(io: logo, filename: 'logo_Digitale')
 sous_thematique.save
 
-sous_thematique = SousThematique.new(titre: "Sécurité Sociale", thematique_id: economie.id)
-logo = URI.open("https://lh3.googleusercontent.com/proxy/4u0VDJLPkayKM-tDZGE20unAVQ7Q2F_HYEjVwfyb79IcyZXBE3inW8pAqFwW8WDepQ4ULaAPn5ps3asoT9HCDAffMP84mHMqbzW9TlwWU4tK2UG2sPmy9JlIov82KJ8OBGimcFB4PIGQeTAPaxDEAw")
-sous_thematique.photo.attach(io: logo, filename: 'logo_securite_sociale')
-sous_thematique.save
+# sous_thematique = SousThematique.new(titre: "Sécurité Sociale", thematique_id: economie.id)
+# logo = URI.open("https://lh3.googleusercontent.com/proxy/4u0VDJLPkayKM-tDZGE20unAVQ7Q2F_HYEjVwfyb79IcyZXBE3inW8pAqFwW8WDepQ4ULaAPn5ps3asoT9HCDAffMP84mHMqbzW9TlwWU4tK2UG2sPmy9JlIov82KJ8OBGimcFB4PIGQeTAPaxDEAw")
+# sous_thematique.photo.attach(io: logo, filename: 'logo_securite_sociale')
+# sous_thematique.save
 
 puts "Creatings Partis and Avis..."
 
