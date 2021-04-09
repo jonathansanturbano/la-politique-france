@@ -1,12 +1,12 @@
 class PersonnalitesController < ApplicationController
   def index
-    @personnalites = Personnalite.all
     @partis = Parti.order(:nom)
-
-    return if params[:search].nil?
-
-    parti = Parti.find(params[:search])
-    @personnalites = Personnalite.where(parti_id: parti)
+    if params[:search].nil?
+      @personnalites = Personnalite.all
+    else
+      parti = Parti.find(params[:search])
+      @personnalites = Personnalite.where(parti_id: parti)
+    end
   end
 
   def search

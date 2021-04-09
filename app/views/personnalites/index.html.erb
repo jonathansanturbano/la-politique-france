@@ -12,13 +12,13 @@
 <% end %>
 
 <%# if !params[:search].nil? %>
-  <div class="cards">
+  <div class="vertical-cards">
     <% @personnalites.each do |personnalite| %>
-      <%= link_to personnalite_path(personnalite), class: "political-card" do %>
+      <%= link_to personnalite_path(personnalite), class: "political-card card-personnalite" do %>
           <div class="card-image">
             <%= cl_image_tag personnalite.parti.photo.key, class: "zoom", size: "200x200", crop: "pad", gravity: "center" %>
           </div>
-          <div class="card-information">
+          <div class="card-information-personnalite">
             <h5><%= personnalite.nom %></h5>
             <h6>(<%= personnalite.lien %>)</h6>
             <p><%= personnalite.poste %></p>

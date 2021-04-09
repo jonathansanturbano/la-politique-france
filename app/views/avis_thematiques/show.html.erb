@@ -8,18 +8,16 @@
     <h1><%= @avis_thematique.thematique.titre %></h1>
   </div>
 
-  <% if !@avis_thematique.opinion_majoritaire.blank? %>
-    <p><%= @avis_thematique.opinion_majoritaire %></p>
+  <% if !@avis_thematique.rich_opinion_majoritaire.blank? %>
+    <p><%= @avis_thematique.rich_opinion_majoritaire %></p>
   <% else %>
     <p>Pas de remarques à ce sujet.</p>
   <% end %>
 
-  <p><%= @avis_thematique.divergences %></p>
+  <p><%= @avis_thematique.rich_divergences %></p>
 
-  <% unless @avis_thematique.liens.nil? %>
-    <% @avis_thematique.liens.each do |lien| %>
-      <p><%= lien %></p>
-    <% end %>
+  <% unless @avis_thematique.liens.length == 0 %>
+      <p><%= @avis_thematique.rich_liens %></p>
   <% end %>
 
 </div>

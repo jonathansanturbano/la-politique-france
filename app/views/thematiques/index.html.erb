@@ -1,6 +1,6 @@
 <% provide(:title, 'Thématiques') %>
 <h1>Thématiques</h1>
-<div class="cards">
+<div class="vertical-cards">
   <% @thematiques.each do |thematique| %>
     <%= link_to thematique_path(thematique), class: "political-card" do %>
       <div class="card-image">

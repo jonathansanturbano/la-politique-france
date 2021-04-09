@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_03_135946) do
+ActiveRecord::Schema.define(version: 2021_04_09_141545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2021_01_03_135946) do
     t.bigint "thematique_id", null: false
     t.text "opinion_majoritaire"
     t.text "divergences"
-    t.string "liens"
+    t.text "liens"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["parti_id"], name: "index_avis_thematiques_on_parti_id"

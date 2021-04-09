@@ -1,7 +1,7 @@
 <% provide(:title, 'Partis Politiques') %>
 <h1>Partis Politiques</h1>
 
-<div class="cards">
+<div class="vertical-cards">
   <% @partis.each do |parti| %>
     <% unless parti.nom == "Indépendant" %>
       <%= link_to parti_path(parti), class: "political-card" do %>

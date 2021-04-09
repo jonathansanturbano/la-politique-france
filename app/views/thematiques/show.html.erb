@@ -1,7 +1,7 @@
 <% provide(:title, @thematique.titre) %>
 <h1><%= @thematique.titre %></h1>
 
-<div class="cards">
+<div class="vertical-cards">
   <% @sous_thematiques.each do |sous_thematique| %>
     <%= link_to thematique_sous_thematique_path(sous_thematique.thematique, sous_thematique), class: "political-card" do %>
       <div class="card-image">

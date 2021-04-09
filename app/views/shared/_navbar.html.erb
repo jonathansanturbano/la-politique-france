@@ -3,21 +3,11 @@
     <%= image_tag "logo.png" %>
   <% end %>
   <div class="pc-links">
-    <div>
-      <%= link_to "Partis Politiques", partis_path %>
-    </div>
-    <div>
-      <%= link_to "Thématiques", thematiques_path %>
-    </div>
-    <div>
-      <%= link_to "Personnalités Politiques", personnalites_path %>
-    </div>
-    <div>
-      <%= link_to "Pour aller plus loin...", pour_aller_plus_loin_path %>
-    </div>
-    <div>
-      <%= link_to "Qui sommes-nous ?", qui_sommes_nous_path %>
-    </div>
+      <%= link_to "Partis Politiques", partis_path, title: "Partis Politiques" %>
+      <%= link_to "Thématiques", thematiques_path, title: "Thématiques" %>
+      <%= link_to "Personnalités Politiques", personnalites_path, title: "Personnalités Politiques" %>
+      <%= link_to "Pour aller plus loin...", pour_aller_plus_loin_path, title: "Pour aller plus loin..." %>
+      <%= link_to "Qui sommes-nous ?", qui_sommes_nous_path, title: "Qui sommes-nous ?" %>
   </div>
   <div id="dropdown">
     <i class="fas fa-align-justify" style="font-size: 2rem"></i>

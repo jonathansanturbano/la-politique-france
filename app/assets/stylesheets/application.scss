@@ -30,6 +30,7 @@ a {
 
 h1 {
   font-family: 'Fira Sans';
+  text-align: center;
 }
 
 .container {
@@ -39,10 +40,4 @@ h1 {
   border-radius: 8px;
   padding: 1rem;
   margin: 2rem auto;
-}
-
-.trix-content {
-  a {
-  color: green;
-  }
 }
