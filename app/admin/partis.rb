@@ -46,36 +46,38 @@ ActiveAdmin.register Parti do
           f.has_many :avis_thematiques,
                                         heading: false,
                                         new_record: false do |a|
-            # ul a.object.thematique.titre do
-              # li do
-              #   a.label :rich_opinion_majoritaire, class: 'trix-editor-label'
-              #   a.rich_text_area :rich_opinion_majoritaire
-              # end
-              # li do
-              #   a.label :rich_divergences, class: 'trix-editor-label'
-              #   a.rich_text_area :rich_divergences
-              # end
-              # li do
-              #   a.label :rich_liens, class: 'trix-editor-label'
-              #   a.rich_text_area :rich_liens
-              # end
+            ul a.object.thematique.titre, class: "hello" do
+              li do
+                # text_node "Opinion Majoritaire".html_safe
+                a.label :rich_opinion_majoritaire, class: 'trix-editor-label'
+                a.rich_text_area :rich_opinion_majoritaire
+              end
+              li do
+                # text_node "Divergences".html_safe
+                a.label :rich_divergences, class: 'trix-editor-label'
+                a.rich_text_area :rich_divergences
+              end
+              li do
+                # text_node "Liens".html_safe
+                a.label :rich_liens, class: 'trix-editor-label'
+                a.rich_text_area :rich_liens
+              end
+            end
+            # li do
+            #   text_node "&nbsp;".html_safe
+            #   a.label :rich_opinion_majoritaire, class: "trix-editor-label"
+            #   a.rich_text_area :rich_opinion_majoritaire
             # end
-              text_node a.object.the.html_safe
-                li do
-                  a.label :rich_opinion_majoritaire, class: "trix-editor-label"
-                  a.rich_text_area :rich_opinion_majoritaire
-                end
-                text_node "&nbsp;".html_safe
-                li do
-                  a.label :rich_divergences, class: "trix-editor-label"
-                  a.rich_text_area :rich_divergences
-                end
-                text_node "&nbsp;".html_safe
-                li do
-                  a.label :rich_liens, class: "trix-editor-label"
-                  a.rich_text_area :rich_liens
-                end
-              text_node "&nbsp;".html_safe
+            # text_node "&nbsp;".html_safe
+            # li do
+            #   a.label :rich_divergences, class: "trix-editor-label"
+            #   a.rich_text_area :rich_divergences
+            # end
+            # text_node "&nbsp;".html_safe
+            # li do
+            #   a.label :rich_liens, class: "trix-editor-label"
+            #   a.rich_text_area :rich_liens
+            # end
           end
         end
       end

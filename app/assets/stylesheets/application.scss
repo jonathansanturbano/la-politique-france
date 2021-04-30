@@ -7,13 +7,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'select2/dist/css/select2';
+@import "select2/dist/css/select2";
 @import "./actiontext.scss";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
 
 body {
   background-color: white;
@@ -21,15 +20,13 @@ body {
 }
 
 a {
-  color: $ourblue;
-
   &:hover {
     color: $ourblue;
   }
 }
 
 h1 {
-  font-family: 'Fira Sans';
+  font-family: "Fira Sans";
   text-align: center;
 }
 

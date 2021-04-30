@@ -1,6 +1,6 @@
 ActiveAdmin.register AvisSousThematique do
 
-  permit_params :sous_thematique_id, :parti_id, :avis, :liens
+  permit_params :sous_thematique_id, :parti_id, :avis, :liens, :rich_avis, :rich_liens
 
   index do
     selectable_column
