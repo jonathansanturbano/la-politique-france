@@ -35,12 +35,7 @@ import { cleanUpSearch } from "../vanilla/clean_up_search";
 document.addEventListener("turbolinks:load", () => {
   initSelect2();
   initModalOnClick();
-  initAlgolia();
+  // initAlgolia();
   logoAppear();
   cleanUpSearch();
-  // document.querySelectorAll(".political-card").forEach((card) => {
-  //   card.addEventListener("mouseenter", (event) => {
-  //     console.log(event.currentTarget);
-  //   });
-  // });
 });

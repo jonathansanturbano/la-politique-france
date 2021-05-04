@@ -31,3 +31,32 @@ body.active_admin {
     margin-bottom: 10px;
   }
 }
+
+.titre-input-avis-thematique {
+  font-size: 1.2rem;
+  margin: 1rem auto;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.admin-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  align-content: space-evenly;
+
+  li button {
+    text-transform: uppercase;
+  }
+}
+
+.admin-categorie-thematique {
+  display: none;
+  margin: 1rem;
+}
+
+.active {
+  display: block;
+}

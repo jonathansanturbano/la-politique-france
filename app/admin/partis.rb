@@ -1,14 +1,16 @@
 ActiveAdmin.register Parti do
-
+  form partial: 'form'
   permit_params :nom, :rich_description, :photo,
                 avis_thematiques_attributes: [:id, :rich_opinion_majoritaire, :rich_divergences, :rich_liens, :thematique_id, :_destroy],
-                avis_sous_thematiques_attributes: [:id, :sous_thematique_id, :avis, :_destroy]
+                avis_sous_thematiques_attributes: [:id, :sous_thematique_id, :rich_avis, :_destroy]
 
   index do
     selectable_column
     column :id
     column :nom
-    column :description
+    column "Description" do |t|
+      t.rich_description.body
+    end
     column :created_at
     column :updated_at
     actions
@@ -42,52 +44,62 @@ ActiveAdmin.register Parti do
 
     tabs do
       tab 'Avis Thématiques' do
+        ul class: "admin-categories" do
+          Thematique.all.order(:titre).each do |thematique|
+            li do
+              button thematique.titre
+            end
+          end
+        end
         f.inputs do
-          f.has_many :avis_thematiques,
-                                        heading: false,
-                                        new_record: false do |a|
-            ul a.object.thematique.titre, class: "hello" do
-              li do
-                # text_node "Opinion Majoritaire".html_safe
-                a.label :rich_opinion_majoritaire, class: 'trix-editor-label'
-                a.rich_text_area :rich_opinion_majoritaire
-              end
-              li do
-                # text_node "Divergences".html_safe
-                a.label :rich_divergences, class: 'trix-editor-label'
-                a.rich_text_area :rich_divergences
-              end
-              li do
-                # text_node "Liens".html_safe
-                a.label :rich_liens, class: 'trix-editor-label'
-                a.rich_text_area :rich_liens
+          div class: "admin-categories-thematique" do
+            f.has_many :avis_thematiques,
+                                          heading: false,
+                                          allow_destroy: false,
+                                          new_record: false do |a|
+              div class: "admin-categorie-thematique", 'data-category': a.object.thematique.titre do
+
+                li "Opinion Majoritaire", class: "titre-input-avis-thematique"
+                li do
+                  a.label :rich_opinion_majoritaire, class: 'trix-editor-label'
+                  a.rich_text_area :rich_opinion_majoritaire
+                end
+
+                li "Divergences", class: "titre-input-avis-thematique"
+                li do
+                  a.label :rich_divergences, class: 'trix-editor-label'
+                  a.rich_text_area :rich_divergences
+                end
+
+                li "Liens", class: "titre-input-avis-thematique"
+                li do
+                  a.label :rich_liens, class: 'trix-editor-label'
+                  a.rich_text_area :rich_liens
+                end
               end
             end
-            # li do
-            #   text_node "&nbsp;".html_safe
-            #   a.label :rich_opinion_majoritaire, class: "trix-editor-label"
-            #   a.rich_text_area :rich_opinion_majoritaire
-            # end
-            # text_node "&nbsp;".html_safe
-            # li do
-            #   a.label :rich_divergences, class: "trix-editor-label"
-            #   a.rich_text_area :rich_divergences
-            # end
-            # text_node "&nbsp;".html_safe
-            # li do
-            #   a.label :rich_liens, class: "trix-editor-label"
-            #   a.rich_text_area :rich_liens
-            # end
           end
         end
       end
       tab 'Avis Sous-Thématiques' do
+        ul class: "admin-categories" do
+          Thematique.all.order(:titre).each do |thematique|
+            li do
+              button thematique.titre
+            end
+          end
+        end
         f.inputs do
-          f.has_many :avis_sous_thematiques, heading: nil,
+          f.has_many :avis_sous_thematiques, heading: false,
+                                             allow_destroy: false,
                                              new_record: false do |a|
-            a.input :sous_thematique_id,
-                    as: :select, collection: SousThematique.all.map { |u| ["#{u.thematique.titre.upcase} - #{u.titre}", u.id] }, include_blank: false, label: false
-            a.input :avis
+            div class: "admin-categorie-thematique", 'data-category': a.object.sous_thematique.thematique.titre do
+              li a.object.sous_thematique.titre, class: "titre-input-avis-thematique"
+              li do
+                a.label :rich_avis, class: 'trix-editor-label'
+                a.rich_text_area :rich_avis
+              end
+            end
           end
         end
       end
