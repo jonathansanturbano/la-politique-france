@@ -4,9 +4,21 @@
 
   .avis-sous-thematiques {
     margin: 1rem auto;
+    width: 100%;
 
     h2 {
       text-align: center;
+      text-decoration: underline;
     }
+
+    .trix-content li {
+      text-align: left;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .avis-sous-thematiques h2 {
+    text-align: left;
   }
 }

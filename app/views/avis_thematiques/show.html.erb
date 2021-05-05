@@ -22,11 +22,13 @@
 
   <div class="grid-avis-sous-thematiques">
     <% @avis_sous_thematiques.each do |avis| %>
-      <div class="avis-sous-thematiques">
-        <h2><%= avis.sous_thematique.titre %></h2>
-        <p><%= avis.rich_avis %></p>
-      </div>
+      <% if avis.rich_avis.body.to_s.length != 37 %>
+        <div class="avis-sous-thematiques">
+          <h2><%= avis.sous_thematique.titre %></h2>
+          <%= avis.rich_avis %>
+        </div>
       <% end %>
+    <% end %>
   </div>
 
 </div>
