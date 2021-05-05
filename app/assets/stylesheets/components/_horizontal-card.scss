@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-self: center;
   word-wrap: break-word;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 2px;
@@ -22,6 +22,8 @@
 }
 
 .card-image-political {
+  display: flex;
+  justify-content: center;
 }
 
 .card-information-horizontal {
@@ -34,10 +36,17 @@
   font-size: 12px;
   height: 246px;
 
-  p {
+  & > div {
     box-sizing: border-box;
     padding: 6px;
     overflow: scroll;
+    width: 100%;
+
+    & > ul {
+      margin-bottom: 0;
+      padding-right: 10px;
+      padding-left: 20px;
+    }
   }
 }
 
@@ -50,12 +59,13 @@
 
   .card-information-horizontal {
     margin-left: 1rem;
-    text-align: justify;
+    text-align: left;
     height: 100%;
     font-size: 14px;
 
-    p {
-      margin: 0;
+    & > div > ul {
+      padding-left: revert;
+      padding-right: revert;
     }
   }
 }

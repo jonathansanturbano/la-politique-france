@@ -2,14 +2,6 @@
   margin: 1rem 10vw;
   align-items: stretch;
 
-  div:first-child {
-    width: 80%;
-  }
-
-  div:last-child {
-    width: 20%;
-  }
-
   .select2-container {
     width: 100% !important;
     height: 100%;
@@ -29,9 +21,11 @@
   .search-form > div:first-child {
     flex-grow: 4;
     margin-right: 0.5rem;
+    width: 80%;
   }
 
   .search-form > div:last-child {
     flex-grow: 1;
+    width: 20%;
   }
 }
