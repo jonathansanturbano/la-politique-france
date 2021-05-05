@@ -1,10 +1,8 @@
 <% provide(:title, @personnalite.nom) %>
 <h1><%= @personnalite.nom %></h1>
 <div class="line-space"></div>
-<p class="personnalite-resume">
-  <%= @personnalite.resume %>
-</p>
+  <%= @personnalite.rich_resume %>
 <div class="line-space"></div>
 <p class="personnalite-description">
-  <%= @personnalite.propositions %>
+  <%= @personnalite.rich_propositions %>
 </p>

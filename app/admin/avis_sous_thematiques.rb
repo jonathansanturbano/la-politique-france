@@ -1,5 +1,5 @@
 ActiveAdmin.register AvisSousThematique do
-
+  menu parent: 'Avis'
   permit_params :sous_thematique_id, :parti_id, :avis, :liens, :rich_avis, :rich_liens
 
   index do
@@ -10,7 +10,9 @@ ActiveAdmin.register AvisSousThematique do
     column "Sous-Thématique" do |t|
       t.sous_thematique.titre
     end
-    column :avis
+    column "Avis" do |t|
+      t.rich_avis.body
+    end
     actions
   end
 

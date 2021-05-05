@@ -20,4 +20,13 @@
       <p><%= @avis_thematique.rich_liens %></p>
   <%# end %>
 
+  <div class="grid-avis-sous-thematiques">
+    <% @avis_sous_thematiques.each do |avis| %>
+      <div class="avis-sous-thematiques">
+        <h2><%= avis.sous_thematique.titre %></h2>
+        <p><%= avis.avis %></p>
+      </div>
+      <% end %>
+  </div>
+
 </div>

@@ -1,0 +1,12 @@
+.grid-avis-sous-thematiques {
+  display: flex;
+  flex-direction: column;
+
+  .avis-sous-thematiques {
+    margin: 1rem auto;
+
+    h2 {
+      text-align: center;
+    }
+  }
+}

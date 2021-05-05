@@ -1,5 +1,5 @@
 ActiveAdmin.register Thematique do
-
+  menu priority: 2
   config.filters = false
 
   permit_params :titre,

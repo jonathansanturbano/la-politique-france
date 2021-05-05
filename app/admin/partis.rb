@@ -1,12 +1,12 @@
 ActiveAdmin.register Parti do
-  form partial: 'form'
+  menu priority: 1
+  config.batch_actions = false
   permit_params :nom, :rich_description, :photo,
                 avis_thematiques_attributes: [:id, :rich_opinion_majoritaire, :rich_divergences, :rich_liens, :thematique_id, :_destroy],
                 avis_sous_thematiques_attributes: [:id, :sous_thematique_id, :rich_avis, :_destroy]
 
   index do
     selectable_column
-    column :id
     column :nom
     column "Description" do |t|
       t.rich_description.body

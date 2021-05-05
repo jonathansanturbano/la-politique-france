@@ -6,6 +6,12 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Politique Française"
 
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add label: 'Avis', priority: 4
+    end
+  end
+
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
@@ -232,7 +238,8 @@ ActiveAdmin.setup do |config|
   #
     config.namespace :admin do |admin|
       admin.build_menu :utility_navigation do |menu|
-        menu.add label: "Retour au Site", url: "https://politique-france.herokuapp.com/", html_options: { target: :blank }
+        menu.add label: "Retour au Site",
+          url: "https://politique-france.herokuapp.com/", html_options: { target: :blank }
         admin.add_logout_button_to_menu menu
       end
     end

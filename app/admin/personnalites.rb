@@ -1,11 +1,12 @@
 ActiveAdmin.register Personnalite do
-
+  menu priority: 5
+  config.batch_actions = false
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :nom, :resume, :propositions, :poste, :lien, :parti_id
+  permit_params :nom, :rich_resume, :rich_propositions, :poste, :lien, :parti_id
   #
   # or
   #
@@ -17,14 +18,18 @@ ActiveAdmin.register Personnalite do
 
   index do
     selectable_column
+    column :nom
     column "Parti" do |t|
       t.parti.nom
     end
-    column :lien
     column :poste
-    column :nom
-    column :resume
-    column :propositions
+    column "Resume" do |t|
+      t.rich_resume.body
+    end
+    column "Propositions" do |t|
+      t.rich_propositions.body
+    end
+    column :lien
     actions
   end
 
@@ -38,8 +43,16 @@ ActiveAdmin.register Personnalite do
       f.input :lien, as: :select, collection: ["Membre", "Affilié"], include_blank: false
       f.input :poste
       f.input :nom
-      f.input :resume
-      f.input :propositions
+
+      li do
+        f.label :rich_resume, class: 'trix-editor-label'
+        f.rich_text_area :rich_resume
+      end
+
+      li do
+        f.label :rich_propositions, class: 'trix-editor-label'
+        f.rich_text_area :rich_propositions
+      end
     end
     f.actions
   end

@@ -1,5 +1,5 @@
 ActiveAdmin.register AvisThematique do
-
+  menu parent: 'Avis'
   permit_params :rich_opinion_majoritaire, :rich_divergences, :rich_liens
 
   index do
@@ -10,8 +10,12 @@ ActiveAdmin.register AvisThematique do
     column "Thématique" do |t|
       t.thematique.titre
     end
-    column :opinion_majoritaire
-    column :divergences
+    column "Opinion Majoritaire" do |t|
+      t.rich_opinion_majoritaire.body
+    end
+    column "divergences" do |t|
+      t.rich_divergences.body
+    end
     actions
   end
 
