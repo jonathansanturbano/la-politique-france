@@ -9,12 +9,6 @@ class PersonnalitesController < ApplicationController
     end
   end
 
-  def search
-    # NOT LINKED FOR NOW
-    parti = Parti.find(params[:search])
-    @personnalites = Personnalite.where(parti_id: parti)
-  end
-
   def show
     @personnalite = Personnalite.find(params[:id])
   end

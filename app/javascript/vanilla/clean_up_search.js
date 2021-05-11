@@ -3,8 +3,9 @@ const cleanUpSearch = () => {
     ".select2-container--default"
   );
   if (
-    window.location.href.match(/personnalites/) &&
-    duplicateSearch.length > 1
+    (window.location.href.match(/personnalites/) &&
+      duplicateSearch.length > 1) ||
+    (window.location.href.match(/partis/) && duplicateSearch.length > 1)
   ) {
     duplicateSearch.forEach((search, index) => {
       if (index !== 0) search.remove();

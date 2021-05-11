@@ -46,7 +46,8 @@
     color: $ourblue;
     font-size: 1.2rem;
     font-weight: bold;
-    transition: all 0.3s;
+    transition: all 0.5s;
+    transition-delay: 0.2s;
 
     &::before {
       display: block;

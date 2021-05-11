@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :personnalites, only: [:index, :show]
+  get '/partis/search', to: 'partis#search'
   resources :partis, only: [:index, :show]
   resources :thematiques, only: [:index, :show] do
     resources :sous_thematiques, only: [:index, :show]
@@ -14,6 +15,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/qui-sommes-nous', to: 'pages#about'
   get '/pour-aller-plus-loin', to: 'pages#info'
-  get '/recherche', to: 'pages#search'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

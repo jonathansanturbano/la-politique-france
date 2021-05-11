@@ -3,13 +3,6 @@
     <div>
       <%= image_tag "logo.png", class: "logo-home" %>
     </div>
-    <div>
-      <%= form_tag recherche_path, method: :get do %>
-        <%= text_field_tag :query,
-            params[:query],
-            placeholder: "Que recherchez-vous ?", class: "home-search" %>
-      <% end %>
-    </div>
     <div class="home-grid">
       <%= link_to "Partis Politiques", partis_path, title: "Partis Politiques", class: "custom-button" %>
       <%= link_to "Thématiques", thematiques_path, title: "Thématiques", class: "custom-button" %>
