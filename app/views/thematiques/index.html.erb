@@ -1,5 +1,6 @@
 <% provide(:title, 'Thématiques') %>
 <h1>Thématiques</h1>
+<p class="page-explanation">Quels sujets vous intéressent ?</p>
 <div class="vertical-cards">
   <% @thematiques.each do |thematique| %>
     <%= link_to thematique_path(thematique), class: "political-card" do %>

@@ -1,5 +1,6 @@
 <% provide(:title, @thematique.titre) %>
 <h1><%= @thematique.titre %></h1>
+<p><%= @thematique.description %></p>
 
 <div class="vertical-cards">
   <% @sous_thematiques.each do |sous_thematique| %>

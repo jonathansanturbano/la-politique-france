@@ -4,11 +4,11 @@ class SousThematique < ApplicationRecord
   has_one_attached :photo
   after_create :add_sous_thematique_avis
 
-  include AlgoliaSearch
+  # include AlgoliaSearch
 
-  algoliasearch do
-    attributes :titre
-  end
+  # algoliasearch do
+  #   attributes :titre
+  # end
 
   def add_sous_thematique_avis
     partis = Parti.all

@@ -4,6 +4,7 @@ ActiveAdmin.register Thematique do
 
   permit_params :titre,
                 :photo,
+                :description,
                 sous_thematiques_attributes: [:id, :titre, :photo]
   #
   # or
@@ -23,6 +24,7 @@ ActiveAdmin.register Thematique do
   form do |f|
     f.inputs 'Details' do
       f.input :titre
+      f.rich_text_area :description
       f.input :photo, as: :file, label: "Icon"
     end
     f.inputs "Sous-Thématiques" do
