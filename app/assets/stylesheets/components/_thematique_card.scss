@@ -1,0 +1,44 @@
+.thematique-cardholder {
+  position: relative;
+  transition: all 0.1s linear;
+  transform-style: preserve-3d;
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
+}
+
+.thematique-card-front,
+.thematique-card-back {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  word-wrap: break-word;
+  background-color: white;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  height: 350px;
+  transition-property: box-shadow;
+  transition-duration: 1s;
+  text-align: center;
+  color: $ourblue;
+  transition: all 1s linear;
+  transform-style: preserve-3d;
+}
+
+.thematique-card-front {
+  z-index: 2;
+  backface-visibility: hidden;
+}
+
+.thematique-card-back {
+  z-index: 1;
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+}

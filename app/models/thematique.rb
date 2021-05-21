@@ -1,5 +1,6 @@
 class Thematique < ApplicationRecord
   has_many :sous_thematiques, dependent: :destroy
+  has_many :avis_thematiques, dependent: :destroy
   accepts_nested_attributes_for :sous_thematiques
   has_one_attached :photo
   after_create :add_thematique_avis

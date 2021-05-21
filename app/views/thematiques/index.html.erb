@@ -3,15 +3,24 @@
 <p class="page-explanation">Quels sujets vous intéressent ?</p>
 <div class="vertical-cards">
   <% @thematiques.each do |thematique| %>
-    <%= link_to thematique_path(thematique), class: "political-card" do %>
-      <div class="card-image">
-        <% if thematique.photo.attached? %>
-          <%= cl_image_tag thematique.photo.key, class: "zoom", size: "180x180", crop: "pad", gravity: "center" %>
+    <div class="thematique-cardholder">
+      <%= link_to thematique_path(thematique), class: "thematique-card-front" do %>
+        <div class="card-image">
+          <% if thematique.photo.attached? %>
+            <%= cl_image_tag thematique.photo.key, class: "zoom", size: "180x180", crop: "pad", gravity: "center" %>
+          <% end %>
+        </div>
+        <div class="card-information">
+          <h5><%= thematique.titre %></h5>
+        </div>
+      <% end %>
+      <div class="thematique-card-back">
+        <ul>
+        <% thematique.sous_thematiques.each  do |sous_thematique| %>
+          <li><%= sous_thematique.titre %></li>
         <% end %>
+        </ul>
       </div>
-      <div class="card-information">
-        <h5><%= thematique.titre %></h5>
-      </div>
-    <% end %>
+    </div>
   <% end %>
 </div>
