@@ -1,5 +1,6 @@
 class ThematiquesController < ApplicationController
   def index
+    # NEED TO JOIN SOUS THEMATIQUES TO AVOID N+1
     @thematiques = Thematique.all.order(:titre)
   end
 

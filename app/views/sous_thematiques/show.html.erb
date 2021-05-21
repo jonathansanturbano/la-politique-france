@@ -1,8 +1,11 @@
 <% provide(:title, @sous_thematique.titre) %>
 
-<div class="image-container">
-  <%= cl_image_tag @sous_thematique.photo.key, class: "image-align" %>
-</div>
+<% if @sous_thematique.photo.attached? %>
+  <div class="image-container">
+    <%= cl_image_tag @sous_thematique.photo.key, class: "image-align" %>
+  </div>
+<% end %>
+
 <h1><%= @sous_thematique.titre %></h1>
 
 <p class="page-explanation">Affinez votre recherche en ajoutant les partis politiques qui vous intéressent par rapport au sujet <%= @sous_thematique.titre %> :</p>
