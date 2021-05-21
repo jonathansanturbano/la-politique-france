@@ -1,4 +1,7 @@
 <% provide(:title, @personnalite.nom) %>
+<div class="image-container">
+  <%= cl_image_tag @personnalite.parti.photo.key, class: "image-align" %>
+</div>
 <h1><%= @personnalite.nom %></h1>
 <div class="line-space"></div>
   <%= @personnalite.rich_resume %>

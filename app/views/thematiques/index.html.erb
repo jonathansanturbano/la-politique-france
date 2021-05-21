@@ -1,10 +1,10 @@
 <% provide(:title, 'Thématiques') %>
 <h1>Thématiques</h1>
-<p class="page-explanation">Quels sujets vous intéressent ?</p>
+<p class="page-explanation">Survolez ou clickez les thématiques pour voir les sujets qu'elle comprennent.</p>
 <div class="vertical-cards">
   <% @thematiques.each do |thematique| %>
     <div class="thematique-cardholder">
-      <%= link_to thematique_path(thematique), class: "thematique-card-front" do %>
+      <div class="thematique-card-front">
         <div class="card-image">
           <% if thematique.photo.attached? %>
             <%= cl_image_tag thematique.photo.key, class: "zoom", size: "180x180", crop: "pad", gravity: "center" %>
@@ -13,13 +13,14 @@
         <div class="card-information">
           <h5><%= thematique.titre %></h5>
         </div>
-      <% end %>
+      </div>
       <div class="thematique-card-back">
         <ul>
         <% thematique.sous_thematiques.each  do |sous_thematique| %>
           <li><%= sous_thematique.titre %></li>
         <% end %>
         </ul>
+        <%= link_to "En savoir plus", thematique_path(thematique), class: "custom-search-button" %>
       </div>
     </div>
   <% end %>

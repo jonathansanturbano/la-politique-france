@@ -1,13 +1,17 @@
 <% provide(:title, @sous_thematique.titre) %>
+
+<div class="image-container">
+  <%= cl_image_tag @sous_thematique.photo.key, class: "image-align" %>
+</div>
 <h1><%= @sous_thematique.titre %></h1>
 
-
+<p class="page-explanation">Affinez votre recherche en ajoutant les partis politiques qui vous intéressent par rapport au sujet <%= @sous_thematique.titre %> :</p>
 <%= form_tag("/thematiques/#{@sous_thematique.thematique.id}/sous_thematiques/#{@sous_thematique.id}", method: "get", cache: false, class: "search-form") do %>
   <div>
     <%= select_tag :search, options_from_collection_for_select(@partis, :id, :nom, params[:search]), multiple: true, value: params[:search], class: 'multi' %>
   </div>
   <div>
-    <%= submit_tag("Search", class: "custom-search-button") %>
+    <%= submit_tag("Rechercher", class: "custom-search-button") %>
   </div>
 <% end %>
 

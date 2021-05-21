@@ -7,14 +7,19 @@
 <% end %>
 
 <div class="line-space"></div>
+
 <div class="parti-nom">
   <h2><%= @parti.nom %></h2>
 </div>
+
 <div class="line-space"></div>
 <p class="parti-description">
   <%= @parti.rich_description %>
 </p>
 
+<div class="line-space"></div>
+
+<h3 class="text-center">Consultez l'avis du parti par rapport aux thématiques suivantes :</h3>
 <div class="vertical-cards">
   <% @avis_thematiques.each do |avis_thematique| %>
     <%= link_to avis_thematique_path(avis_thematique), class: "political-card" do %>
