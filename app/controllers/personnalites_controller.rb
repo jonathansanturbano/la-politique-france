@@ -10,6 +10,6 @@ class PersonnalitesController < ApplicationController
   end
 
   def show
-    @personnalite = Personnalite.find(params[:id])
+    @personnalite = Personnalite.friendly.find(params[:id])
   end
 end

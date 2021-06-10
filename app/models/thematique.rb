@@ -1,4 +1,6 @@
 class Thematique < ApplicationRecord
+  extend FriendlyId
+  friendly_id :titre, use: :slugged
   has_many :sous_thematiques, dependent: :destroy
   has_many :avis_thematiques, dependent: :destroy
   accepts_nested_attributes_for :sous_thematiques

@@ -8,7 +8,7 @@ class PartisController < ApplicationController
   end
 
   def show
-    @parti = Parti.find(params[:id])
+    @parti = Parti.friendly.find(params[:id])
     @avis_thematiques = AvisThematique.where(parti: @parti.id).joins(:thematique).includes(thematique: [photo_attachment: :blob]).order(:titre)
   end
 end

@@ -1,4 +1,6 @@
 class Parti < ApplicationRecord
+  extend FriendlyId
+  friendly_id :nom, use: :slugged
   has_one_attached :photo
   has_many :avis_thematiques, dependent: :destroy
   has_many :thematiques, through: :avis_thematiques

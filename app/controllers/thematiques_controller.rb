@@ -5,7 +5,7 @@ class ThematiquesController < ApplicationController
   end
 
   def show
-    @thematique = Thematique.find(params[:id])
+    @thematique = Thematique.friendly.find(params[:id])
     @sous_thematiques = @thematique.sous_thematiques.order(:titre).includes(photo_attachment: :blob)
   end
 end

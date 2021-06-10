@@ -1,4 +1,6 @@
 class SousThematique < ApplicationRecord
+  extend FriendlyId
+  friendly_id :titre, use: :slugged
   belongs_to :thematique
   has_many :avis_sous_thematiques, dependent: :destroy
   has_one_attached :photo

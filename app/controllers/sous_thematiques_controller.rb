@@ -6,7 +6,7 @@ class SousThematiquesController < ApplicationController
   end
 
   def show
-    @sous_thematique = SousThematique.find(params[:id])
+    @sous_thematique = SousThematique.friendly.find(params[:id])
     @avis_sous_thematiques = AvisSousThematique.where(sous_thematique_id: @sous_thematique.id).includes(parti: [photo_attachment: :blob]).order('partis.nom').with_rich_text_rich_avis
     @partis = Parti.order(:nom)
     if !params[:search].nil?
