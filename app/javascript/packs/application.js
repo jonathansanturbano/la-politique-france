@@ -29,13 +29,11 @@ import "bootstrap";
 import { initModalOnClick } from "../components/modal";
 import { initSelect2 } from "../components/init_select2";
 import { initAlgolia } from "../components/init_algolia_search";
-import { logoAppear } from "../vanilla/logo_appear";
 import { cleanUpSearch } from "../vanilla/clean_up_search";
 
 document.addEventListener("turbolinks:load", () => {
   initSelect2();
   initModalOnClick();
   initAlgolia();
-  logoAppear();
   cleanUpSearch();
 });
