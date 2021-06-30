@@ -5,6 +5,10 @@ ActiveAdmin.register Parti do
                 avis_thematiques_attributes: [:id, :rich_opinion_majoritaire, :rich_divergences, :rich_liens, :thematique_id, :_destroy],
                 avis_sous_thematiques_attributes: [:id, :sous_thematique_id, :rich_avis, :_destroy]
 
+  controller do
+    defaults :finder => :find_by_slug
+  end
+
   index do
     selectable_column
     column :nom

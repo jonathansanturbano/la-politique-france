@@ -6,6 +6,28 @@
   position: relative;
 }
 
+.avis-title-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avis-parti-logo {
+  width: 190px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+  padding-bottom: 1rem;
+}
+
 .avis_thematique > div > h1 {
   margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .avis-parti-logo {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    border-bottom: none;
+  }
 }

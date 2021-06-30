@@ -16,6 +16,10 @@ ActiveAdmin.register Personnalite do
   #   permitted
   # end
 
+  controller do
+    defaults :finder => :find_by_slug
+  end
+
   index do
     selectable_column
     column :nom

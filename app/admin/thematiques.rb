@@ -15,6 +15,10 @@ ActiveAdmin.register Thematique do
   #   permitted
   # end
 
+  controller do
+    defaults :finder => :find_by_slug
+  end
+
   index do
     selectable_column
     column :titre
