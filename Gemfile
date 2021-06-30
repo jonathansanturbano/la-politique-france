@@ -31,7 +31,6 @@ gem 'activeadmin'
 # Cloud photos and attachment
 gem 'cloudinary', '~> 1.16.0'
 
-gem 'algoliasearch-rails'
 gem 'activeadmin_quill_editor'
 
 # Friendly ID in URL

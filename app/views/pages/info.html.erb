@@ -1,2 +1,13 @@
 <% provide(:title, 'Pour aller plus loin') %>
-<h1>Info</h1>
+<h1>Pour aller plus loin</h1>
+<ul class="article-cards">
+  <% @articles.each do |article| %>
+    <li class="article-card">
+      <%= link_to article_path(article) do %>
+        <h2><%= article.titre %></h2>
+        <i class="fas fa-arrow-right"></i>
+      <% end %>
+      <p><%= article.resume %></p>
+    </li>
+  <% end %>
+</ul>

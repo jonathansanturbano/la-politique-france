@@ -1,0 +1,52 @@
+.article-cards {
+  margin-top: 2rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.article-card {
+  padding: 1rem;
+  position: relative;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:hover i {
+      font-size: 1.1rem;
+      transform: rotate(180deg);
+    }
+  }
+
+  i {
+    margin-left: 1rem;
+    transition: transform 0.3s ease-in;
+  }
+}
+
+.article-cards .article-card:not(:first-child) {
+  &::before {
+    content: "";
+    width: 20%;
+    position: absolute;
+    height: 1px;
+    background-color: black;
+    top: -5px;
+    left: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

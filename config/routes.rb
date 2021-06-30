@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'articles/show'
   get 'avis_sous_thematiques/show'
   get 'avis_thematiques/show'
   get 'sous_thematiques/index'
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/qui-sommes-nous', to: 'pages#about'
   get '/pour-aller-plus-loin', to: 'pages#info'
+  resources :articles, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -28,12 +28,10 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initModalOnClick } from "../components/modal";
 import { initSelect2 } from "../components/init_select2";
-import { initAlgolia } from "../components/init_algolia_search";
 import { cleanUpSearch } from "../vanilla/clean_up_search";
 
 document.addEventListener("turbolinks:load", () => {
   initSelect2();
   initModalOnClick();
-  initAlgolia();
   cleanUpSearch();
 });

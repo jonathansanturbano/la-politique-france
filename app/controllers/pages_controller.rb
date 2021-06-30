@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def info
+    @articles = Article.all
   end
 
   def search

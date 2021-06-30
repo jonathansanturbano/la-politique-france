@@ -12,12 +12,6 @@ class Parti < ApplicationRecord
   after_update :create_blank_avis_thematiques, :create_blank_avis_sous_thematiques
   has_rich_text :rich_description
 
-  include AlgoliaSearch
-
-  algoliasearch do
-    attributes :nom
-  end
-
   def create_blank_avis_thematiques
     thematiques = Thematique.all
     thematiques.each do |thematique|

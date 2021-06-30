@@ -8,12 +8,6 @@ class Thematique < ApplicationRecord
   after_create :add_thematique_avis
   has_rich_text :description
 
-  # include AlgoliaSearch
-
-  # algoliasearch do
-  #   attributes :titre
-  # end
-
   def add_thematique_avis
     partis = Parti.all
     thematique = Thematique.last
